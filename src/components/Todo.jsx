@@ -39,7 +39,7 @@ const Todo = () => {
       mobileNumber,
     };
 
-    // Retrieve existing data from localStorage
+    // Retrieving THE EXISTING DATA FROM LOCAL
     let existingData = JSON.parse(localStorage.getItem("FormWithTodo"));
 
     if (!Array.isArray(existingData)) {
@@ -57,9 +57,8 @@ const Todo = () => {
     try {
       FormSchema.parse(data);
       console.log(data);
-      existingData.push(data); // Push new data into the existingData array
+      existingData.push(data); 
       localStorage.setItem("FormWithTodo", JSON.stringify(existingData));
-      //Give and alert after submitted form
       alert("Form Submitted Successfully");
       setErrors({});
     } catch (err) {
